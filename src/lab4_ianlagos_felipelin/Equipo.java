@@ -3,7 +3,7 @@ package lab4_ianlagos_felipelin;
 import java.util.ArrayList;
 
 public class Equipo {
-
+    protected String casa;
     protected int partidosG;
     protected int partidosP;
     protected int promedioA;
