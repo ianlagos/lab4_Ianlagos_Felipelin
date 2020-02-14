@@ -58,7 +58,7 @@ public class Lab4_ianLagos_felipelin {
                         System.out.print("ingrese el promedio de fuerza: ");
                         double fuerza_pr = leer.nextInt();
                         grif.add(new Gryffindor(partidos_ganados, partidos_perdidos, agilidad_pr, velozidad_pr, fuerza_pr, " "));
-                        
+
                     } else if (tipo_casa.contains("Slytherin")) {
                         contS++;
                         System.out.print("ingrese cantidad de partidos perdidos: ");
@@ -99,7 +99,7 @@ public class Lab4_ianLagos_felipelin {
                         double fuerza_pr = leer.nextInt();
                         huff.add(new Hufflepuff(partidos_ganados, partidos_perdidos, agilidad_pr, velozidad_pr, fuerza_pr, " "));
                     }
-                    
+
                     break;
                 case 2:
 
