@@ -99,7 +99,18 @@ public class Lab4_ianLagos_felipelin {
                         double fuerza_pr = leer.nextInt();
                         huff.add(new Hufflepuff(partidos_ganados, partidos_perdidos, agilidad_pr, velozidad_pr, fuerza_pr, " "));
                     }
-                    
+                    for (Gryffindor x : grif) {
+                        System.out.println(x);
+                    }
+                    for (Slytherin y : slyth) {
+                        System.out.println(y);
+                    }
+                    for (Hufflepuff z : huff) {
+                        System.out.println(z);
+                    }
+                    for (Ravenclaw w : rave) {
+                        System.out.println(w);
+                    }
                     break;
                 case 2:
 
