@@ -20,7 +20,7 @@ public class Lab4_ianLagos_felipelin {
             System.out.println("1 = Cree su Equipo");
             System.out.println("2 = Cree sus Juagadores");
             System.out.println("3 = sumulacions");
-            System.out.print("Ingrese su opcion");
+            System.out.print("Ingrese su opcion: ");
             int opcion = leer.nextInt();
             switch (opcion) {
                 case 1:
@@ -58,7 +58,24 @@ public class Lab4_ianLagos_felipelin {
                         System.out.print("ingrese el promedio de fuerza: ");
                         double fuerza_pr = leer.nextInt();
                         grif.add(new Gryffindor(partidos_ganados, partidos_perdidos, agilidad_pr, velozidad_pr, fuerza_pr, " "));
+                        for (Juagdor e : Jugadores) {
+                            System.out.println(e);
+                        }
+                        System.out.println("Ingrese que posicion quiere para agregar jugador");
+                        int posGrif = leer.nextInt();
+                        int contadorGrif = -1, s = 0;
+                        while (contadorGrif < grif.size()) {
+                            if (grif.get(contadorGrif + 1).getJugadores2().get(contadorGrif + 1) instanceof Guardian) {
+                                if (s > 2) {
+                                    break;
+                                }
+                                grif.get(contadorGrif + 1).getJugadores2().add(Jugadores.get(posGrif));
+                                s++;
 
+                            }
+                            contadorGrif++;
+
+                        }
                     } else if (tipo_casa.contains("Slytherin")) {
                         contS++;
                         System.out.print("ingrese cantidad de partidos perdidos: ");
