@@ -3,16 +3,17 @@ package lab4_ianlagos_felipelin;
 import java.util.ArrayList;
 
 public class Equipo {
+
     protected String casa;
     protected int partidosG;
     protected int partidosP;
-    protected int promedioA;
-    protected int promedioV;
-    protected int promedioF;
+    protected double promedioA;
+    protected double promedioV;
+    protected double promedioF;
     protected ArrayList Jugadores = new ArrayList();
     protected String capitan;
 
-    public Equipo(int partidosG, int partidosP, int promedioA, int promedioV, int promedioF, String capitan) {
+    public Equipo(int partidosG, int partidosP, double promedioA, double promedioV, double promedioF, String capitan) {
         this.partidosG = partidosG;
         this.partidosP = partidosP;
         this.promedioA = promedioA;
@@ -37,27 +38,27 @@ public class Equipo {
         this.partidosP = partidosP;
     }
 
-    public int getPromedioA() {
+    public double getPromedioA() {
         return promedioA;
     }
 
-    public void setPromedioA(int promedioA) {
+    public void setPromedioA(double promedioA) {
         this.promedioA = promedioA;
     }
 
-    public int getPromedioV() {
+    public double getPromedioV() {
         return promedioV;
     }
 
-    public void setPromedioV(int promedioV) {
+    public void setPromedioV(double promedioV) {
         this.promedioV = promedioV;
     }
 
-    public int getPromedioF() {
+    public double getPromedioF() {
         return promedioF;
     }
 
-    public void setPromedioF(int promedioF) {
+    public void setPromedioF(double promedioF) {
         this.promedioF = promedioF;
     }
 
