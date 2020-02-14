@@ -9,7 +9,8 @@ package lab4_ianlagos_felipelin;
  *
  * @author ian
  */
-public class Juagdor {
+public abstract class Juagdor {
+
     private String nombre;
     private int tiempo_cursado;
     private String casa;
@@ -62,8 +63,6 @@ public class Juagdor {
         return "Juagdor{" + "nombre=" + nombre + ", tiempo_cursado=" + tiempo_cursado + ", casa=" + casa + ", numero_uni=" + numero_uni + '}';
     }
 
-    
+    public abstract int VelocidadInicial();
 
-    
-    
 }

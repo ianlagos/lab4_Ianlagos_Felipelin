@@ -9,7 +9,8 @@ public class Cazadores extends Juagdor {
         super();
     }
 
-    public Cazadores(int peso, int reflejos) {
+    public Cazadores(int peso, int reflejos, String nombre, int tiempo_cursado, String casa, int numero_uni) {
+        super(nombre, tiempo_cursado, casa, numero_uni);
         this.peso = peso;
         this.reflejos = reflejos;
     }
@@ -33,6 +34,11 @@ public class Cazadores extends Juagdor {
     @Override
     public String toString() {
         return "Cazadores{" + "peso=" + peso + ", reflejos=" + reflejos + '}';
+    }
+
+    @Override
+    public int VelocidadInicial() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

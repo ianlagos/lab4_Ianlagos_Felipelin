@@ -35,18 +35,29 @@ public class Lab4_ianLagos_felipelin {
                     break;
                 case 2:
                     System.out.println("Ingrese el nombre del jugador : ");
-                    String nombre = leer.nextLine();
+                    String nombre = leer.next();
                     System.out.println("Ingrese el año que cursa en Hogwarts: ");
                     int año = leer.nextInt();
+                    while (año <= 0) {
+                        System.out.println("Numero invalido");
+                        System.out.println("Ingrese el año que cursa en Hogwarts: ");
+                        año = leer.nextInt();
+                    }
                     System.out.println("Ingrese el numero de Uniforme: ");
                     int uni = leer.nextInt();
+                    for (Juagdor x : Jugadores) {
+                        while (x.getNumero_uni() == uni) {
+                            System.out.println("Numero de uniforme ya esta tomado: ");
+                            uni = leer.nextInt();
+                        }
+                    }
                     System.out.println("Ingrese el nombre de la casa: ");
-                    System.out.println("Tiene que ser Gryffindor,Slytherin,Ravenclaw,HufflePuff");
-                    String casa = leer.nextLine();
-                    while (!casa.contains("Gryffindor") && !casa.contains("Slytherin") && !casa.contains("Gryffindor") && !casa.contains("Slytherin")) {
+                    System.out.println("Tiene que ser Gryffindor,Slytherin,Ravenclaw,Hufflepuff");
+                    String casa = leer.next();
+                    while (!casa.contains("Gryffindor") && !casa.contains("Slytherin") && !casa.contains("Ravenclaw") && !casa.contains("Hufflepuff")) {
                         System.out.println("Tiene que ser Gryffindor,Slytherin,Ravenclaw,HufflePuff");
                         System.out.println("Ingrese el nombre de la casa: ");
-                        casa = leer.nextLine();
+                        casa = leer.next();
                     }
                     System.out.println("Ingrese el rol que desempeña: ");
                     System.out.println("1. Guardian \n2. Golpeadores \n3. Cazadores \n4. Buscador");
@@ -54,17 +65,52 @@ public class Lab4_ianLagos_felipelin {
                     switch (menu2) {
                         case 1: {
                             System.out.println("Ingrese el reflejo: ");
-                            int reflejo = leer.nextInt();
-                            Jugadores.add(new Guardian(reflejo, nombre, año, casa, uni));
+                            int reflejos = leer.nextInt();
+                            while (reflejos < 1 || reflejos > 10) {
+                                System.out.println("Ingresado un valor invalido");
+                                System.out.println("Ingrese nivel de reflejos 1-10");
+                                reflejos = leer.nextInt();
+                            }
+                            Jugadores.add(new Guardian(reflejos, nombre, año, casa, uni));
                             break;
                         }
                         case 2: {
+                            System.out.println("Ingrese nivel de musculatura 1-15: ");
+                            int musculatura = leer.nextInt();
+                            while (musculatura < 1 || musculatura > 15) {
+                                System.out.println("Ingresado un valor invalido");
+                                System.out.println("Ingrese nivel de reflejos 1-10");
+                                musculatura = leer.nextInt();
+                            }
+                            System.out.println("Ingrese nivel de reflejos 1-15: ");
+                            int reflejos = leer.nextInt();
+                            while (reflejos < 1 || reflejos > 10) {
+                                System.out.println("Ingresado un valor invalido");
+                                System.out.println("Ingrese nivel de reflejos 1-10");
+                                reflejos = leer.nextInt();
+                            }
+
+                            Jugadores.add(new Golpeadores(musculatura, reflejos, nombre, año, casa, uni));
+
                             break;
                         }
                         case 3: {
+                            System.out.println("Ingrese nivel de reflejos 1-10");
+                            int reflejos = leer.nextInt();
+                            while (reflejos < 1 || reflejos > 10) {
+                                System.out.println("Ingresado un valor invalido");
+                                System.out.println("Ingrese nivel de reflejos 1-10");
+                                reflejos = leer.nextInt();
+                            }
+                            System.out.println("Ingrese el peso: ");
+                            int peso = leer.nextInt();
+                            Jugadores.add(new Cazadores(peso, reflejos, nombre, año, casa, uni));
                             break;
                         }
                         case 4: {
+                            System.out.println("Ingrese el peso: ");
+                            int peso = leer.nextInt();
+                            Jugadores.add(new Buscador(peso, nombre, año, casa, uni));
                             break;
                         }
                         default:

@@ -26,4 +26,9 @@ public class Guardian extends Juagdor {
         return "Guardian{" + "reflejo=" + reflejo + '}';
     }
 
+    @Override
+    public int VelocidadInicial() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }
