@@ -28,7 +28,17 @@ public class Buscador extends Juagdor {
 
     @Override
     public int VelocidadInicial() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return (200 / peso) * 7;
+    }
+
+    @Override
+    public int Agilidad() {
+        return 0;
+    }
+
+    @Override
+    public int Fuerza() {
+        return 0;
     }
 
 }
