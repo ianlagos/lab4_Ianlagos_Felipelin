@@ -34,10 +34,10 @@ public class Lab4_ianLagos_felipelin {
                     System.out.println("Hufflepuff");
                     System.out.print("Ingrese la casa de su equipo: ");
                     String tipo_casa = leer.next();
-                    while (!tipo_casa.contains("Gryffindor") && !tipo_casa.contains("Slytherin") && !tipo_casa.contains("Ravenclaw") && !tipo_casa.contains("Hufflepuff")) {
-                        System.out.println("Tiene que ser Gryffindor,Slytherin,Ravenclaw,HufflePuff");
-                        System.out.print("Ingrese el nombre de la casa: ");
-                        tipo_casa = leer.next();
+                    try {
+                        Casa_validacion x = new Casa_validacion(tipo_casa);
+                    } catch (EX_casa e) {
+                        
                     }
                     if (contG > 2 || contS > 2 || contR > 2 || contH > 2) {
                         System.out.println("solo pueden aver 1 equipo por casa");
