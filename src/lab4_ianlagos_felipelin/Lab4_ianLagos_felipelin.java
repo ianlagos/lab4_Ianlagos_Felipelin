@@ -10,6 +10,10 @@ public class Lab4_ianLagos_felipelin {
 
     public static void main(String[] args) {
         // TODO code application logic here
+        ArrayList<Gryffindor> grif = new ArrayList();
+        ArrayList<Slytherin> slyth = new ArrayList();
+        ArrayList<Hufflepuff> huff = new ArrayList();
+        ArrayList<Ravenclaw> rave = new ArrayList();
         ArrayList<Juagdor> Jugadores = new ArrayList();
         char resp = 's';
         while (resp == 's' || resp == 'S') {
@@ -20,20 +24,85 @@ public class Lab4_ianLagos_felipelin {
             int opcion = leer.nextInt();
             switch (opcion) {
                 case 1:
-                    try {
-                        System.out.println("1 = Gryfindor");
-                        System.out.println("2 = Slytherin");
-                        System.out.println("3 = Ravenclaw");
-                        System.out.println("4 = Hufflepuff");
-                        System.out.print("Ingrese la casa de su equipo: ");
-                        int opcion_casa = leer.nextInt();
-
-                    } catch (InputMismatchException e) {
-                        System.out.println("er");
+                    int contG = 0,
+                     contS = 0,
+                     contR = 0,
+                     contH = 0;
+                    System.out.println("Gryffindor");
+                    System.out.println("Slytherin");
+                    System.out.println("Ravenclaw");
+                    System.out.println("Hufflepuff");
+                    System.out.print("Ingrese la casa de su equipo: ");
+                    String tipo_casa = leer.next();
+                    while (!tipo_casa.contains("Gryffindor") && !tipo_casa.contains("Slytherin") && !tipo_casa.contains("Ravenclaw") && !tipo_casa.contains("Hufflepuff")) {
+                        System.out.println("Tiene que ser Gryffindor,Slytherin,Ravenclaw,HufflePuff");
+                        System.out.print("Ingrese el nombre de la casa: ");
+                        tipo_casa = leer.next();
                     }
-
+                    if (contG > 2 || contS > 2 || contR > 2 || contH > 2) {
+                        System.out.println("solo pueden aver 1 equipo por casa");
+                        break;
+                    }
+                    if (tipo_casa.contains("Gryffindor")) {
+                        contG++;
+                        System.out.print("ingrese cantidad de partidos perdidos: ");
+                        int partidos_perdidos = leer.nextInt();
+                        System.out.print("ingrese cantidad de partidos ganados: ");
+                        int partidos_ganados = leer.nextInt();
+                        //
+                        System.out.print("ingrese el promedio de Agilidad de sus jugadores: ");
+                        double agilidad_pr = leer.nextDouble();
+                        System.out.print("ingrese el promedio de Velozidad: ");
+                        double velozidad_pr = leer.nextInt();
+                        //
+                        System.out.print("ingrese el promedio de fuerza: ");
+                        double fuerza_pr = leer.nextInt();
+                        grif.add(new Gryffindor(partidos_ganados, partidos_perdidos, agilidad_pr, velozidad_pr, fuerza_pr, " "));
+                        
+                    } else if (tipo_casa.contains("Slytherin")) {
+                        contS++;
+                        System.out.print("ingrese cantidad de partidos perdidos: ");
+                        int partidos_perdidos = leer.nextInt();
+                        System.out.print("ingrese cantidad de partidos ganados: ");
+                        int partidos_ganados = leer.nextInt();
+                        System.out.print("ingrese el promedio de Agilidad de sus jugadores");
+                        double agilidad_pr = leer.nextDouble();
+                        System.out.println("ingrese el promedio de Velozidad ");
+                        double velozidad_pr = leer.nextInt();
+                        System.out.println("ingrese el promedio de fuerza");
+                        double fuerza_pr = leer.nextInt();
+                        slyth.add(new Slytherin(partidos_ganados, partidos_perdidos, agilidad_pr, velozidad_pr, fuerza_pr, " "));
+                    } else if (tipo_casa.contains("Ravenclaw")) {
+                        contR++;
+                        System.out.print("ingrese cantidad de partidos perdidos: ");
+                        int partidos_perdidos = leer.nextInt();
+                        System.out.print("ingrese cantidad de partidos ganados: ");
+                        int partidos_ganados = leer.nextInt();
+                        System.out.print("ingrese el promedio de Agilidad de sus jugadores");
+                        double agilidad_pr = leer.nextDouble();
+                        System.out.println("ingrese el promedio de Velozidad ");
+                        double velozidad_pr = leer.nextInt();
+                        System.out.println("ingrese el promedio de fuerza");
+                        double fuerza_pr = leer.nextInt();
+                        rave.add(new Ravenclaw(partidos_ganados, partidos_perdidos, agilidad_pr, velozidad_pr, fuerza_pr, " "));
+                    } else if (tipo_casa.contains("Hufflepuff")) {
+                        contH++;
+                        System.out.print("ingrese cantidad de partidos perdidos: ");
+                        int partidos_perdidos = leer.nextInt();
+                        System.out.print("ingrese cantidad de partidos ganados: ");
+                        int partidos_ganados = leer.nextInt();
+                        System.out.print("ingrese el promedio de Agilidad de sus jugadores");
+                        double agilidad_pr = leer.nextDouble();
+                        System.out.println("ingrese el promedio de Velozidad ");
+                        double velozidad_pr = leer.nextInt();
+                        System.out.println("ingrese el promedio de fuerza");
+                        double fuerza_pr = leer.nextInt();
+                        huff.add(new Hufflepuff(partidos_ganados, partidos_perdidos, agilidad_pr, velozidad_pr, fuerza_pr, " "));
+                    }
+                    
                     break;
                 case 2:
+
                     System.out.println("Ingrese el nombre del jugador : ");
                     String nombre = leer.nextLine();
                     System.out.println("Ingrese el año que cursa en Hogwarts: ");
