@@ -10,7 +10,7 @@ public class Equipo {
     protected double promedioA;
     protected double promedioV;
     protected double promedioF;
-    protected ArrayList Jugadores = new ArrayList();
+    protected ArrayList<Juagdor> Jugadoress = new ArrayList();
     protected String capitan;
 
     public Equipo(int partidosG, int partidosP, double promedioA, double promedioV, double promedioF, String capitan) {
@@ -62,12 +62,12 @@ public class Equipo {
         this.promedioF = promedioF;
     }
 
-    public ArrayList getJugadores() {
-        return Jugadores;
+    public ArrayList<Juagdor> getJugadoress() {
+        return Jugadoress;
     }
 
-    public void setJugadores(ArrayList Jugadores) {
-        this.Jugadores = Jugadores;
+    public void setJugadoress(ArrayList<Juagdor> Jugadores) {
+        this.Jugadoress = Jugadores;
     }
 
     public String getCapitan() {
@@ -80,7 +80,7 @@ public class Equipo {
 
     @Override
     public String toString() {
-        return "Equipo{" + "partidosG=" + partidosG + ", partidosP=" + partidosP + ", promedioA=" + promedioA + ", promedioV=" + promedioV + ", promedioF=" + promedioF + ", Jugadores=" + Jugadores + ", capitan=" + capitan + '}';
+        return "Equipo{" + "partidosG=" + partidosG + ", partidosP=" + partidosP + ", promedioA=" + promedioA + ", promedioV=" + promedioV + ", promedioF=" + promedioF + ", Jugadores=" + Jugadoress + ", capitan=" + capitan + '}';
     }
 
 }
