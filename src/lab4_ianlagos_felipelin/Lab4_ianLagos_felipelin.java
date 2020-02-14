@@ -1,10 +1,11 @@
 package lab4_ianlagos_felipelin;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Lab4_ianLagos_felipelin {
 
-    static Scanner leer = new Scanner(System.in);
+    public static Scanner leer = new Scanner(System.in);
 
     public static void main(String[] args) {
         // TODO code application logic here
@@ -17,6 +18,17 @@ public class Lab4_ianLagos_felipelin {
             int opcion = leer.nextInt();
             switch (opcion) {
                 case 1:
+                    try {
+                        System.out.println("1 = Gryfindor");
+                        System.out.println("2 = Slytherin");
+                        System.out.println("3 = Ravenclaw");
+                        System.out.println("4 = Hufflepuff");
+                        System.out.print("Ingrese la casa de su equipo: ");
+                        int opcion_casa = leer.nextInt();
+                        
+                    } catch (InputMismatchException e) {
+                        System.out.println("er");
+                    }
 
                     break;
                 case 2:
