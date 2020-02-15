@@ -1,14 +1,15 @@
 package lab4_ianlagos_felipelin;
 
 public class Ravenclaw extends Equipo {
+
     protected int pa;
     protected int pp;
     protected double prA;
     protected double pv;
     protected double pf;
-    protected String cap;
-    
-    public Ravenclaw(int partidosG, int partidosP, double promedioA, double promedioV, double promedioF, String capitan) {
+    protected Juagdor cap;
+
+    public Ravenclaw(int partidosG, int partidosP, double promedioA, double promedioV, double promedioF, Juagdor capitan) {
         super(partidosG, partidosP, promedioA, promedioV, promedioF, capitan);
         this.pa = partidosG;
         this.pp = partidosP;
@@ -22,5 +23,5 @@ public class Ravenclaw extends Equipo {
     public String toString() {
         return "Ravenclaw{" + "Partidos Ganados=" + pa + ", Partidos perdidos=" + pp + ", Promedio aguilidad=" + prA + ", Promedio velozidad=" + pv + ", Promedio fuerza=" + pf + ", capitan=" + cap + '}';
     }
-    
+
 }

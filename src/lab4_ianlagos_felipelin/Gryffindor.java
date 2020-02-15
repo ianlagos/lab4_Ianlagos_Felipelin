@@ -9,10 +9,10 @@ public class Gryffindor extends Equipo {
     protected double pA;
     protected double pv;
     protected double pf;
-    protected String cap;
+    protected Juagdor cap;
     private ArrayList<Juagdor> jugadores = new ArrayList();
 
-    public Gryffindor(int partidosG, int partidosP, double promedioA, double promedioV, double promedioF, String capitan) {
+    public Gryffindor(int partidosG, int partidosP, double promedioA, double promedioV, double promedioF, Juagdor capitan) {
         super(partidosG, partidosP, promedioA, promedioV, promedioF, capitan);
         this.arr = partidosG;
         this.pp = partidosP;

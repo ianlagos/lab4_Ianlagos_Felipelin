@@ -4,6 +4,10 @@ public class Cazadores extends Juagdor {
 
     private int peso;
     private int reflejos;
+    private String nombreG;
+    private int tiempo_cursadoG;
+    private String casaG;
+    private int numero_uniG;
 
     public Cazadores() {
         super();
@@ -13,6 +17,10 @@ public class Cazadores extends Juagdor {
         super(nombre, tiempo_cursado, casa, numero_uni);
         this.peso = peso;
         this.reflejos = reflejos;
+        this.nombreG = nombre;
+        this.tiempo_cursadoG = tiempo_cursado;
+        this.casaG = casa;
+        this.numero_uniG = numero_uni;
     }
 
     public int getPeso() {
@@ -33,7 +41,7 @@ public class Cazadores extends Juagdor {
 
     @Override
     public String toString() {
-        return "Cazadores{" + "peso=" + peso + ", reflejos=" + reflejos + '}';
+        return "Cazadores{" + "peso = " + peso + ", reflejos = " + reflejos + ", nombre = " + nombreG + ", tiempo cursado = " + tiempo_cursadoG + ", casa = " + casaG + ", numero_uni = " + numero_uniG + '}';
     }
 
     @Override

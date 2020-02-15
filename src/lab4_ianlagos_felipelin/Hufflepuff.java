@@ -1,14 +1,15 @@
 package lab4_ianlagos_felipelin;
 
 public class Hufflepuff extends Equipo {
+
     protected int pa;
     protected int pp;
     protected double prA;
     protected double pv;
     protected double pf;
-    protected String cap;
-    
-    public Hufflepuff(int partidosG, int partidosP, double promedioA, double promedioV, double promedioF, String capitan) {
+    protected Juagdor cap;
+
+    public Hufflepuff(int partidosG, int partidosP, double promedioA, double promedioV, double promedioF, Juagdor capitan) {
         super(partidosG, partidosP, promedioA, promedioV, promedioF, capitan);
         this.pa = partidosG;
         this.pp = partidosP;
@@ -22,6 +23,5 @@ public class Hufflepuff extends Equipo {
     public String toString() {
         return "Hufflepuff{" + "Partidos ganados=" + pa + ", Partidos perdidos=" + pp + ", Promedio agilidad=" + prA + ", Promedio velozidad=" + pv + ", Promedio fuerza=" + pf + ", capitan=" + cap + '}';
     }
-    
-    
+
 }
