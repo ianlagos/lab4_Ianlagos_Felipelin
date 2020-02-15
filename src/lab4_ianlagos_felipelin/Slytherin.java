@@ -1,14 +1,15 @@
 package lab4_ianlagos_felipelin;
 
 public class Slytherin extends Equipo {
+
     protected int pa;
     protected int pp;
     protected double prA;
     protected double pv;
     protected double pf;
-    protected String cap;
-    
-    public Slytherin(int partidosG, int partidosP, double promedioA, double promedioV, double promedioF, String capitan) {
+    protected Juagdor cap;
+
+    public Slytherin(int partidosG, int partidosP, double promedioA, double promedioV, double promedioF, Juagdor capitan) {
         super(partidosG, partidosP, promedioA, promedioV, promedioF, capitan);
         this.pa = partidosG;
         this.pp = partidosP;

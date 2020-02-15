@@ -4,6 +4,10 @@ public class Golpeadores extends Juagdor {
 
     private int musculatura;
     private int reflejos;
+    private String nombreG;
+    private int tiempo_cursadoG;
+    private String casaG;
+    private int numero_uniG;
 
     public Golpeadores() {
         super();
@@ -13,6 +17,10 @@ public class Golpeadores extends Juagdor {
         super(nombre, tiempo_cursado, casa, numero_uni);
         this.musculatura = musculatura;
         this.reflejos = reflejos;
+        this.nombreG = nombre;
+        this.tiempo_cursadoG = tiempo_cursado;
+        this.casaG = casa;
+        this.numero_uniG = numero_uni;
     }
 
     public int getMusculatura() {
@@ -33,7 +41,7 @@ public class Golpeadores extends Juagdor {
 
     @Override
     public String toString() {
-        return "Golpeadores{" + "musculatura=" + musculatura + ", reflejos=" + reflejos + '}';
+        return "Golpeadores{" + "musculatura = " + musculatura + ", reflejos = " + reflejos + ", nombre = " + nombreG + ", tiempo cursado = " + tiempo_cursadoG + ", casa = " + casaG + ", numero uni = " + numero_uniG + '}';
     }
 
     @Override

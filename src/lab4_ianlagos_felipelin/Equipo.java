@@ -11,9 +11,9 @@ public class Equipo {
     protected double promedioV;
     protected double promedioF;
     protected ArrayList<Juagdor> Jugadoress = new ArrayList();
-    protected String capitan;
+    protected Juagdor capitan;
 
-    public Equipo(int partidosG, int partidosP, double promedioA, double promedioV, double promedioF, String capitan) {
+    public Equipo(int partidosG, int partidosP, double promedioA, double promedioV, double promedioF, Juagdor capitan) {
         this.partidosG = partidosG;
         this.partidosP = partidosP;
         this.promedioA = promedioA;
@@ -70,11 +70,11 @@ public class Equipo {
         this.Jugadoress = Jugadores;
     }
 
-    public String getCapitan() {
+    public Juagdor getCapitan() {
         return capitan;
     }
 
-    public void setCapitan(String capitan) {
+    public void setCapitan(Juagdor capitan) {
         this.capitan = capitan;
     }
 

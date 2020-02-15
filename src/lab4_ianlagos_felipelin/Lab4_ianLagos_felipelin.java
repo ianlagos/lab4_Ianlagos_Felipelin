@@ -37,7 +37,7 @@ public class Lab4_ianLagos_felipelin {
                     try {
                         Casa_validacion x = new Casa_validacion(tipo_casa);
                     } catch (EX_casa e) {
-                        
+
                     }
                     if (contG > 2 || contS > 2 || contR > 2 || contH > 2) {
                         System.out.println("solo pueden aver 1 equipo por casa");
@@ -58,24 +58,7 @@ public class Lab4_ianLagos_felipelin {
                         System.out.print("ingrese el promedio de fuerza: ");
                         double fuerza_pr = leer.nextInt();
                         grif.add(new Gryffindor(partidos_ganados, partidos_perdidos, agilidad_pr, velozidad_pr, fuerza_pr, " "));
-                        for (Juagdor e : Jugadores) {
-                            System.out.println(e);
-                        }
-                        System.out.println("Ingrese que posicion quiere para agregar jugador");
-                        int posGrif = leer.nextInt();
-                        int contadorGrif = -1, s = 0;
-                        while (contadorGrif < grif.size()) {
-                            if (grif.get(contadorGrif + 1).getJugadores2().get(contadorGrif + 1) instanceof Guardian) {
-                                if (s > 2) {
-                                    break;
-                                }
-                                grif.get(contadorGrif + 1).getJugadores2().add(Jugadores.get(posGrif));
-                                s++;
 
-                            }
-                            contadorGrif++;
-
-                        }
                     } else if (tipo_casa.contains("Slytherin")) {
                         contS++;
                         System.out.print("ingrese cantidad de partidos perdidos: ");
@@ -131,87 +114,152 @@ public class Lab4_ianLagos_felipelin {
                     }
                     break;
                 case 2:
-
-                    System.out.println("Ingrese el nombre del jugador : ");
-                    String nombre = leer.next();
-                    System.out.println("Ingrese el año que cursa en Hogwarts: ");
-                    int año = leer.nextInt();
-                    while (año <= 0) {
-                        System.out.println("Numero invalido");
-                        System.out.println("Ingrese el año que cursa en Hogwarts: ");
-                        año = leer.nextInt();
-                    }
-                    System.out.println("Ingrese el numero de Uniforme: ");
-                    int uni = leer.nextInt();
-                    for (Juagdor x : Jugadores) {
-                        while (x.getNumero_uni() == uni) {
-                            System.out.println("Numero de uniforme ya esta tomado: ");
-                            uni = leer.nextInt();
-                        }
-                    }
-                    System.out.println("Ingrese el nombre de la casa: ");
-                    System.out.println("Tiene que ser Gryffindor,Slytherin,Ravenclaw,Hufflepuff");
-                    String casa = leer.next();
-                    while (!casa.contains("Gryffindor") && !casa.contains("Slytherin") && !casa.contains("Ravenclaw") && !casa.contains("Hufflepuff")) {
-                        System.out.println("Tiene que ser Gryffindor,Slytherin,Ravenclaw,HufflePuff");
-                        System.out.println("Ingrese el nombre de la casa: ");
-                        casa = leer.next();
-                    }
-                    System.out.println("Ingrese el rol que desempeña: ");
-                    System.out.println("1. Guardian \n2. Golpeadores \n3. Cazadores \n4. Buscador");
-                    int menu2 = leer.nextInt();
-                    switch (menu2) {
+                    System.out.println("1. Agregar \n2. Eliminar \n3. Modificar \n4. Listar");
+                    int menuJugadores = leer.nextInt();
+                    switch (menuJugadores) {
                         case 1: {
-                            System.out.println("Ingrese el reflejo: ");
-                            int reflejos = leer.nextInt();
-                            while (reflejos < 1 || reflejos > 10) {
-                                System.out.println("Ingresado un valor invalido");
-                                System.out.println("Ingrese nivel de reflejos 1-10");
-                                reflejos = leer.nextInt();
+                            System.out.println("Ingrese el nombre del jugador : ");
+                            String nombre = leer.next();
+                            System.out.println("Ingrese el año que cursa en Hogwarts: ");
+                            int año = leer.nextInt();
+                            while (año <= 0) {
+                                System.out.println("Numero invalido");
+                                System.out.println("Ingrese el año que cursa en Hogwarts: ");
+                                año = leer.nextInt();
                             }
-                            Jugadores.add(new Guardian(reflejos, nombre, año, casa, uni));
+                            System.out.println("Ingrese el numero de Uniforme: ");
+                            int uni = leer.nextInt();
+                            for (Juagdor x : Jugadores) {
+                                while (x.getNumero_uni() == uni) {
+                                    System.out.println("Numero de uniforme ya esta tomado: ");
+                                    uni = leer.nextInt();
+                                }
+                            }
+                            System.out.println("Ingrese el nombre de la casa: ");
+                            System.out.println("Tiene que ser Gryffindor,Slytherin,Ravenclaw,Hufflepuff");
+                            String casa = leer.next();
+                            while (!casa.contains("Gryffindor") && !casa.contains("Slytherin") && !casa.contains("Ravenclaw") && !casa.contains("Hufflepuff")) {
+                                System.out.println("Tiene que ser Gryffindor,Slytherin,Ravenclaw,HufflePuff");
+                                System.out.println("Ingrese el nombre de la casa: ");
+                                casa = leer.next();
+                            }
+                            System.out.println("Ingrese el rol que desempeña: ");
+                            System.out.println("1. Guardian \n2. Golpeadores \n3. Cazadores \n4. Buscador");
+                            int menu2 = leer.nextInt();
+                            switch (menu2) {
+                                case 1: {
+                                    System.out.println("Ingrese el reflejo: ");
+                                    int reflejos = leer.nextInt();
+                                    while (reflejos < 1 || reflejos > 10) {
+                                        System.out.println("Ingresado un valor invalido");
+                                        System.out.println("Ingrese nivel de reflejos 1-10");
+                                        reflejos = leer.nextInt();
+                                    }
+                                    Jugadores.add(new Guardian(reflejos, nombre, año, casa, uni));
+                                    break;
+                                }
+                                case 2: {
+                                    System.out.println("Ingrese nivel de musculatura 1-15: ");
+                                    int musculatura = leer.nextInt();
+                                    while (musculatura < 1 || musculatura > 15) {
+                                        System.out.println("Ingresado un valor invalido");
+                                        System.out.println("Ingrese nivel de reflejos 1-10");
+                                        musculatura = leer.nextInt();
+                                    }
+                                    System.out.println("Ingrese nivel de reflejos 1-15: ");
+                                    int reflejos = leer.nextInt();
+                                    while (reflejos < 1 || reflejos > 10) {
+                                        System.out.println("Ingresado un valor invalido");
+                                        System.out.println("Ingrese nivel de reflejos 1-10");
+                                        reflejos = leer.nextInt();
+                                    }
+
+                                    Jugadores.add(new Golpeadores(musculatura, reflejos, nombre, año, casa, uni));
+
+                                    break;
+                                }
+                                case 3: {
+                                    System.out.println("Ingrese nivel de reflejos 1-10");
+                                    int reflejos = leer.nextInt();
+                                    while (reflejos < 1 || reflejos > 10) {
+                                        System.out.println("Ingresado un valor invalido");
+                                        System.out.println("Ingrese nivel de reflejos 1-10");
+                                        reflejos = leer.nextInt();
+                                    }
+                                    System.out.println("Ingrese el peso: ");
+                                    int peso = leer.nextInt();
+                                    Jugadores.add(new Cazadores(peso, reflejos, nombre, año, casa, uni));
+                                    break;
+                                }
+                                case 4: {
+                                    System.out.println("Ingrese el peso: ");
+                                    int peso = leer.nextInt();
+                                    Jugadores.add(new Buscador(peso, nombre, año, casa, uni));
+                                    break;
+                                }
+                                default:
+                            }
+
                             break;
                         }
                         case 2: {
-                            System.out.println("Ingrese nivel de musculatura 1-15: ");
-                            int musculatura = leer.nextInt();
-                            while (musculatura < 1 || musculatura > 15) {
-                                System.out.println("Ingresado un valor invalido");
-                                System.out.println("Ingrese nivel de reflejos 1-10");
-                                musculatura = leer.nextInt();
+                            for (Juagdor Jugadore : Jugadores) {
+                                System.out.println(Jugadore);
                             }
-                            System.out.println("Ingrese nivel de reflejos 1-15: ");
-                            int reflejos = leer.nextInt();
-                            while (reflejos < 1 || reflejos > 10) {
-                                System.out.println("Ingresado un valor invalido");
-                                System.out.println("Ingrese nivel de reflejos 1-10");
-                                reflejos = leer.nextInt();
-                            }
+                            System.out.println("Que posicion quiere eliminar: ");
+                            int pos = leer.nextInt();
 
-                            Jugadores.add(new Golpeadores(musculatura, reflejos, nombre, año, casa, uni));
-
+                            Jugadores.remove(pos);
                             break;
                         }
                         case 3: {
-                            System.out.println("Ingrese nivel de reflejos 1-10");
-                            int reflejos = leer.nextInt();
-                            while (reflejos < 1 || reflejos > 10) {
-                                System.out.println("Ingresado un valor invalido");
-                                System.out.println("Ingrese nivel de reflejos 1-10");
-                                reflejos = leer.nextInt();
+                            for (Juagdor Jugadore : Jugadores) {
+                                System.out.println(Jugadore);
+
                             }
-                            System.out.println("Ingrese el peso: ");
-                            int peso = leer.nextInt();
-                            Jugadores.add(new Cazadores(peso, reflejos, nombre, año, casa, uni));
+                            System.out.println("Ingrese que posicion quiere modificar");
+                            int pos = leer.nextInt();
+                            System.out.println("Ingrese el nombre del jugador : ");
+                            String nombre = leer.next();
+                            Jugadores.get(pos).setNombre(nombre);
+                            System.out.println("Ingrese el año que cursa en Hogwarts: ");
+                            int año = leer.nextInt();
+                            while (año <= 0) {
+                                System.out.println("Numero invalido");
+                                System.out.println("Ingrese el año que cursa en Hogwarts: ");
+                                año = leer.nextInt();
+                            }
+                            Jugadores.get(pos).setTiempo_cursado(año);
+                            System.out.println("Ingrese el numero de Uniforme: ");
+                            int uni = leer.nextInt();
+                            for (Juagdor x : Jugadores) {
+                                while (x.getNumero_uni() == uni) {
+                                    System.out.println("Numero de uniforme ya esta tomado: ");
+                                    uni = leer.nextInt();
+                                }
+                            }
+                            Jugadores.get(pos).setNumero_uni(uni);
+                            System.out.println("Ingrese el nombre de la casa: ");
+                            System.out.println("Tiene que ser Gryffindor,Slytherin,Ravenclaw,Hufflepuff");
+                            String casa = leer.next();
+                            while (!casa.contains("Gryffindor") && !casa.contains("Slytherin") && !casa.contains("Ravenclaw") && !casa.contains("Hufflepuff")) {
+                                System.out.println("Tiene que ser Gryffindor,Slytherin,Ravenclaw,HufflePuff");
+                                System.out.println("Ingrese el nombre de la casa: ");
+                                casa = leer.next();
+                            }
+                            Jugadores.get(pos).setCasa(casa);
+
                             break;
                         }
                         case 4: {
-                            System.out.println("Ingrese el peso: ");
-                            int peso = leer.nextInt();
-                            Jugadores.add(new Buscador(peso, nombre, año, casa, uni));
+
+                            for (Juagdor Jugadore : Jugadores) {
+                                System.out.println(Jugadore);
+                            }
                             break;
                         }
                         default:
+                            System.out.println("Error! Solo existe opcion 1-3");
                     }
 
                     break;
