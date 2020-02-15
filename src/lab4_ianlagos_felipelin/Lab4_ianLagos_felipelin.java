@@ -10,6 +10,7 @@ public class Lab4_ianLagos_felipelin {
 
     public static void main(String[] args) {
         // TODO code application logic here
+        int contG = 0, contS = 0, contR = 0, contH = 0;
         ArrayList<Gryffindor> grif = new ArrayList();
         ArrayList<Slytherin> slyth = new ArrayList();
         ArrayList<Hufflepuff> huff = new ArrayList();
@@ -24,111 +25,224 @@ public class Lab4_ianLagos_felipelin {
             int opcion = leer.nextInt();
             switch (opcion) {
                 case 1:
-                    int contG = 0,
-                     contS = 0,
-                     contR = 0,
-                     contH = 0;
-                    System.out.println("Gryffindor");
-                    System.out.println("Slytherin");
-                    System.out.println("Ravenclaw");
-                    System.out.println("Hufflepuff");
-                    System.out.print("Ingrese la casa de su equipo: ");
-                    String tipo_casa = leer.next();
-                    try {
-                        Casa_validacion x = new Casa_validacion(tipo_casa);
-                    } catch (EX_casa e) {
-                        
-                    }
-                    if (contG > 2 || contS > 2 || contR > 2 || contH > 2) {
-                        System.out.println("solo pueden aver 1 equipo por casa");
-                        break;
-                    }
-                    if (tipo_casa.contains("Gryffindor")) {
-                        contG++;
-                        System.out.print("ingrese cantidad de partidos perdidos: ");
-                        int partidos_perdidos = leer.nextInt();
-                        System.out.print("ingrese cantidad de partidos ganados: ");
-                        int partidos_ganados = leer.nextInt();
-                        //
-                        System.out.print("ingrese el promedio de Agilidad de sus jugadores: ");
-                        double agilidad_pr = leer.nextDouble();
-                        System.out.print("ingrese el promedio de Velozidad: ");
-                        double velozidad_pr = leer.nextInt();
-                        //
-                        System.out.print("ingrese el promedio de fuerza: ");
-                        double fuerza_pr = leer.nextInt();
-                        grif.add(new Gryffindor(partidos_ganados, partidos_perdidos, agilidad_pr, velozidad_pr, fuerza_pr, " "));
-                        for (Juagdor e : Jugadores) {
-                            System.out.println(e);
-                        }
-                        System.out.println("Ingrese que posicion quiere para agregar jugador");
-                        int posGrif = leer.nextInt();
-                        int contadorGrif = -1, s = 0;
-                        while (contadorGrif < grif.size()) {
-                            if (grif.get(contadorGrif + 1).getJugadores2().get(contadorGrif + 1) instanceof Guardian) {
-                                if (s > 2) {
-                                    break;
-                                }
-                                grif.get(contadorGrif + 1).getJugadores2().add(Jugadores.get(posGrif));
-                                s++;
+                    System.out.println("1 = agregar ");
+                    System.out.println("2 = modificar");
+                    System.out.println("3 = eliminar");
+                    System.out.println("4 = listar");
+                    System.out.print("ingrese su opcion: ");
+                    int opcion_pr = leer.nextInt();
+                    switch (opcion_pr) {
+                        case 1:
+                            System.out.println("Gryffindor");
+                            System.out.println("Slytherin");
+                            System.out.println("Ravenclaw");
+                            System.out.println("Hufflepuff");
+                            System.out.print("Ingrese la casa de su equipo: ");
+                            String tipo_casa = leer.next();
+                            try {
+                                Casa_validacion x = new Casa_validacion(tipo_casa);
+                            } catch (EX_casa e) {
 
                             }
-                            contadorGrif++;
+                            if (contG > 2 || contS > 2 || contR > 2 || contH > 2) {
+                                System.out.println("solo pueden aver 1 equipo por casa");
+                                break;
+                            }
+                            if (tipo_casa.contains("Gryffindor")) {
+                                contG++;
+                                System.out.print("ingrese cantidad de partidos perdidos: ");
+                                int partidos_perdidos = leer.nextInt();
+                                System.out.print("ingrese cantidad de partidos ganados: ");
+                                int partidos_ganados = leer.nextInt();
+                                //
+                                System.out.print("ingrese el promedio de Agilidad de sus jugadores: ");
+                                double agilidad_pr = leer.nextDouble();
+                                System.out.print("ingrese el promedio de Velozidad: ");
+                                double velozidad_pr = leer.nextInt();
+                                //
+                                System.out.print("ingrese el promedio de fuerza: ");
+                                double fuerza_pr = leer.nextInt();
+                                grif.add(new Gryffindor(partidos_ganados, partidos_perdidos, agilidad_pr, velozidad_pr, fuerza_pr, " "));
+                            } else if (tipo_casa.contains("Slytherin")) {
+                                contS++;
+                                System.out.print("ingrese cantidad de partidos perdidos: ");
+                                int partidos_perdidos = leer.nextInt();
+                                System.out.print("ingrese cantidad de partidos ganados: ");
+                                int partidos_ganados = leer.nextInt();
+                                System.out.print("ingrese el promedio de Agilidad de sus jugadores");
+                                double agilidad_pr = leer.nextDouble();
+                                System.out.println("ingrese el promedio de Velozidad ");
+                                double velozidad_pr = leer.nextInt();
+                                System.out.println("ingrese el promedio de fuerza");
+                                double fuerza_pr = leer.nextInt();
+                                slyth.add(new Slytherin(partidos_ganados, partidos_perdidos, agilidad_pr, velozidad_pr, fuerza_pr, " "));
+                            } else if (tipo_casa.contains("Ravenclaw")) {
+                                contR++;
+                                System.out.print("ingrese cantidad de partidos perdidos: ");
+                                int partidos_perdidos = leer.nextInt();
+                                System.out.print("ingrese cantidad de partidos ganados: ");
+                                int partidos_ganados = leer.nextInt();
+                                System.out.print("ingrese el promedio de Agilidad de sus jugadores");
+                                double agilidad_pr = leer.nextDouble();
+                                System.out.println("ingrese el promedio de Velozidad ");
+                                double velozidad_pr = leer.nextInt();
+                                System.out.println("ingrese el promedio de fuerza");
+                                double fuerza_pr = leer.nextInt();
+                                rave.add(new Ravenclaw(partidos_ganados, partidos_perdidos, agilidad_pr, velozidad_pr, fuerza_pr, " "));
+                            } else if (tipo_casa.contains("Hufflepuff")) {
+                                contH++;
+                                System.out.print("ingrese cantidad de partidos perdidos: ");
+                                int partidos_perdidos = leer.nextInt();
+                                System.out.print("ingrese cantidad de partidos ganados: ");
+                                int partidos_ganados = leer.nextInt();
+                                System.out.print("ingrese el promedio de Agilidad de sus jugadores");
+                                double agilidad_pr = leer.nextDouble();
+                                System.out.println("ingrese el promedio de Velozidad ");
+                                double velozidad_pr = leer.nextInt();
+                                System.out.println("ingrese el promedio de fuerza");
+                                double fuerza_pr = leer.nextInt();
+                                huff.add(new Hufflepuff(partidos_ganados, partidos_perdidos, agilidad_pr, velozidad_pr, fuerza_pr, " "));
+                                System.out.println("Desea modificar[s/n]: ");
+                            }
+                            break;
+                        case 2:
+                            System.out.println("1=Gryffindor");
+                            System.out.println("2=Slytherin");
+                            System.out.println("3=Ravenclaw");
+                            System.out.println("4=Hufflepuff");
+                            System.out.println("A quien desea elimnar");
+                            int opc_mod = leer.nextInt();
+                            switch (opc_mod) {
+                                case 1:
+                                    System.out.print("ingrese cantidad de partidos perdidos: ");
+                                    int partidos_perdidos = leer.nextInt();
+                                    grif.get(0).setPartidosP(partidos_perdidos);
+                                    //
+                                    System.out.print("ingrese cantidad de partidos ganados: ");
+                                    int partidos_ganados = leer.nextInt();
+                                    grif.get(0).setPartidosG(partidos_ganados);
+                                    //
+                                    System.out.print("ingrese el promedio de Agilidad de sus jugadores");
+                                    double agilidad_pr = leer.nextDouble();
+                                    grif.get(0).setPromedioA(agilidad_pr);
+                                    //
+                                    System.out.println("ingrese el promedio de Velozidad ");
+                                    double velozidad_pr = leer.nextInt();
+                                    grif.get(0).setPromedioV(velozidad_pr);
+                                    //
+                                    System.out.println("ingrese el promedio de fuerza");
+                                    double fuerza_pr = leer.nextInt();
+                                    grif.get(0).setPromedioF(fuerza_pr);
+                                    break;
+                                case 2:
+                                    System.out.print("ingrese cantidad de partidos perdidos: ");
+                                    int partidos_perdidosS = leer.nextInt();
+                                    slyth.get(0).setPartidosP(partidos_perdidosS);
+                                    //
+                                    System.out.print("ingrese cantidad de partidos ganados: ");
+                                    int partidos_ganadosS = leer.nextInt();
+                                    slyth.get(0).setPartidosG(partidos_ganadosS);
+                                    //
+                                    System.out.print("ingrese el promedio de Agilidad de sus jugadores");
+                                    double agilidad_prS = leer.nextDouble();
+                                    slyth.get(0).setPromedioA(agilidad_prS);
+                                    //
+                                    System.out.println("ingrese el promedio de Velozidad ");
+                                    double velozidad_prS = leer.nextInt();
+                                    slyth.get(0).setPromedioV(velozidad_prS);
+                                    //
+                                    System.out.println("ingrese el promedio de fuerza");
+                                    double fuerza_prS = leer.nextInt();
+                                    slyth.get(0).setPromedioF(fuerza_prS);
+                                    break;
+                                case 3:
+                                    System.out.print("ingrese cantidad de partidos perdidos: ");
+                                    int partidos_perdidosR = leer.nextInt();
+                                    slyth.get(0).setPartidosP(partidos_perdidosR);
+                                    //
+                                    System.out.print("ingrese cantidad de partidos ganados: ");
+                                    int partidos_ganadosR = leer.nextInt();
+                                    slyth.get(0).setPartidosG(partidos_ganadosR);
+                                    //
+                                    System.out.print("ingrese el promedio de Agilidad de sus jugadores");
+                                    double agilidad_prR = leer.nextDouble();
+                                    slyth.get(0).setPromedioA(agilidad_prR);
+                                    //
+                                    System.out.println("ingrese el promedio de Velozidad ");
+                                    double velozidad_prR = leer.nextInt();
+                                    slyth.get(0).setPromedioV(velozidad_prR);
+                                    //
+                                    System.out.println("ingrese el promedio de fuerza");
+                                    double fuerza_prR = leer.nextInt();
+                                    slyth.get(0).setPromedioF(fuerza_prR);
+                                    break;
+                                case 4:
+                                    System.out.print("ingrese cantidad de partidos perdidos: ");
+                                    int partidos_perdidosH = leer.nextInt();
+                                    slyth.get(0).setPartidosP(partidos_perdidosH);
+                                    //
+                                    System.out.print("ingrese cantidad de partidos ganados: ");
+                                    int partidos_ganadosH = leer.nextInt();
+                                    slyth.get(0).setPartidosG(partidos_ganadosH);
+                                    //
+                                    System.out.print("ingrese el promedio de Agilidad de sus jugadores");
+                                    double agilidad_prH = leer.nextDouble();
+                                    slyth.get(0).setPromedioA(agilidad_prH);
+                                    //
+                                    System.out.println("ingrese el promedio de Velozidad ");
+                                    double velozidad_prH = leer.nextInt();
+                                    slyth.get(0).setPromedioV(velozidad_prH);
+                                    //
+                                    System.out.println("ingrese el promedio de fuerza");
+                                    double fuerza_prH = leer.nextInt();
+                                    slyth.get(0).setPromedioF(fuerza_prH);
+                                    break;
+                                default:
 
-                        }
-                    } else if (tipo_casa.contains("Slytherin")) {
-                        contS++;
-                        System.out.print("ingrese cantidad de partidos perdidos: ");
-                        int partidos_perdidos = leer.nextInt();
-                        System.out.print("ingrese cantidad de partidos ganados: ");
-                        int partidos_ganados = leer.nextInt();
-                        System.out.print("ingrese el promedio de Agilidad de sus jugadores");
-                        double agilidad_pr = leer.nextDouble();
-                        System.out.println("ingrese el promedio de Velozidad ");
-                        double velozidad_pr = leer.nextInt();
-                        System.out.println("ingrese el promedio de fuerza");
-                        double fuerza_pr = leer.nextInt();
-                        slyth.add(new Slytherin(partidos_ganados, partidos_perdidos, agilidad_pr, velozidad_pr, fuerza_pr, " "));
-                    } else if (tipo_casa.contains("Ravenclaw")) {
-                        contR++;
-                        System.out.print("ingrese cantidad de partidos perdidos: ");
-                        int partidos_perdidos = leer.nextInt();
-                        System.out.print("ingrese cantidad de partidos ganados: ");
-                        int partidos_ganados = leer.nextInt();
-                        System.out.print("ingrese el promedio de Agilidad de sus jugadores");
-                        double agilidad_pr = leer.nextDouble();
-                        System.out.println("ingrese el promedio de Velozidad ");
-                        double velozidad_pr = leer.nextInt();
-                        System.out.println("ingrese el promedio de fuerza");
-                        double fuerza_pr = leer.nextInt();
-                        rave.add(new Ravenclaw(partidos_ganados, partidos_perdidos, agilidad_pr, velozidad_pr, fuerza_pr, " "));
-                    } else if (tipo_casa.contains("Hufflepuff")) {
-                        contH++;
-                        System.out.print("ingrese cantidad de partidos perdidos: ");
-                        int partidos_perdidos = leer.nextInt();
-                        System.out.print("ingrese cantidad de partidos ganados: ");
-                        int partidos_ganados = leer.nextInt();
-                        System.out.print("ingrese el promedio de Agilidad de sus jugadores");
-                        double agilidad_pr = leer.nextDouble();
-                        System.out.println("ingrese el promedio de Velozidad ");
-                        double velozidad_pr = leer.nextInt();
-                        System.out.println("ingrese el promedio de fuerza");
-                        double fuerza_pr = leer.nextInt();
-                        huff.add(new Hufflepuff(partidos_ganados, partidos_perdidos, agilidad_pr, velozidad_pr, fuerza_pr, " "));
+                            }
+                            break;
+                        case 3:
+                            System.out.println("1=Gryffindor");
+                            System.out.println("2=Slytherin");
+                            System.out.println("3=Ravenclaw");
+                            System.out.println("4=Hufflepuff");
+                            System.out.println("A quien desea elimnar");
+                            int opc_elim = leer.nextInt();
+                            switch (opc_elim) {
+                                case 1:
+                                    grif.remove(0);
+                                    break;
+                                case 2:
+                                    slyth.remove(0);
+                                    break;
+                                case 3:
+                                    rave.remove(0);
+                                    break;
+                                case 4:
+                                    huff.remove(0);
+                                    break;
+                                default:
+
+                            }
+                            break;
+                        case 4:
+                            for (Gryffindor x : grif) {
+                                System.out.println(x);
+                            }
+                            for (Slytherin y : slyth) {
+                                System.out.println(y);
+                            }
+                            for (Hufflepuff z : huff) {
+                                System.out.println(z);
+                            }
+                            for (Ravenclaw w : rave) {
+                                System.out.println(w);
+                            }
+                            break;
+                        default:
+                            throw new AssertionError();
                     }
 
-                    for (Gryffindor x : grif) {
-                        System.out.println(x);
-                    }
-                    for (Slytherin y : slyth) {
-                        System.out.println(y);
-                    }
-                    for (Hufflepuff z : huff) {
-                        System.out.println(z);
-                    }
-                    for (Ravenclaw w : rave) {
-                        System.out.println(w);
-                    }
                     break;
                 case 2:
 
@@ -157,6 +271,7 @@ public class Lab4_ianLagos_felipelin {
                         System.out.println("Ingrese el nombre de la casa: ");
                         casa = leer.next();
                     }
+
                     System.out.println("Ingrese el rol que desempeña: ");
                     System.out.println("1. Guardian \n2. Golpeadores \n3. Cazadores \n4. Buscador");
                     int menu2 = leer.nextInt();
@@ -216,11 +331,22 @@ public class Lab4_ianLagos_felipelin {
 
                     break;
                 case 3:
+                    System.out.println("1=Gryffindor");
+                    System.out.println("2=Slytherin");
+                    System.out.println("3=Ravenclaw");
+                    System.out.println("4Hufflepuff");
+                    System.out.print("elija el primer equipo a jugar: ");
+                    int primer_equipo = leer.nextInt();
+                    System.out.println("elija el segunod equipo a jugar: ");
+                    int segundo_equipo = leer.nextInt();
+                    if (true) {
 
+                    }
                     break;
                 default:
                     System.out.println("Ingrese una opcion valida");
             }
         }
     }
+
 }
