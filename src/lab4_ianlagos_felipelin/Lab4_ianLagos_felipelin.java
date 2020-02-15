@@ -63,7 +63,9 @@ public class Lab4_ianLagos_felipelin {
                                 //
                                 System.out.print("ingrese el promedio de fuerza: ");
                                 double fuerza_pr = leer.nextInt();
-                                grif.add(new Gryffindor(partidos_ganados, partidos_perdidos, agilidad_pr, velozidad_pr, fuerza_pr, " "));
+                                System.out.println("Ingrese una posicion para el capitan");
+                                int posCap = leer.nextInt();
+                                grif.add(new Gryffindor(partidos_ganados, partidos_perdidos, agilidad_pr, velozidad_pr, fuerza_pr, Jugadores.get(posCap)));
                             } else if (tipo_casa.contains("Slytherin")) {
                                 contS++;
                                 System.out.print("ingrese cantidad de partidos perdidos: ");
@@ -76,7 +78,9 @@ public class Lab4_ianLagos_felipelin {
                                 double velozidad_pr = leer.nextInt();
                                 System.out.println("ingrese el promedio de fuerza");
                                 double fuerza_pr = leer.nextInt();
-                                slyth.add(new Slytherin(partidos_ganados, partidos_perdidos, agilidad_pr, velozidad_pr, fuerza_pr, " "));
+                                System.out.println("Ingrese una posicion para el capitan");
+                                int posCap = leer.nextInt();
+                                slyth.add(new Slytherin(partidos_ganados, partidos_perdidos, agilidad_pr, velozidad_pr, fuerza_pr, Jugadores.get(posCap)));
                             } else if (tipo_casa.contains("Ravenclaw")) {
                                 contR++;
                                 System.out.print("ingrese cantidad de partidos perdidos: ");
@@ -89,7 +93,9 @@ public class Lab4_ianLagos_felipelin {
                                 double velozidad_pr = leer.nextInt();
                                 System.out.println("ingrese el promedio de fuerza");
                                 double fuerza_pr = leer.nextInt();
-                                rave.add(new Ravenclaw(partidos_ganados, partidos_perdidos, agilidad_pr, velozidad_pr, fuerza_pr, " "));
+                                System.out.println("Ingrese una posicion para el capitan");
+                                int posCap = leer.nextInt();
+                                rave.add(new Ravenclaw(partidos_ganados, partidos_perdidos, agilidad_pr, velozidad_pr, fuerza_pr, Jugadores.get(posCap)));
                             } else if (tipo_casa.contains("Hufflepuff")) {
                                 contH++;
                                 System.out.print("ingrese cantidad de partidos perdidos: ");
@@ -102,7 +108,9 @@ public class Lab4_ianLagos_felipelin {
                                 double velozidad_pr = leer.nextInt();
                                 System.out.println("ingrese el promedio de fuerza");
                                 double fuerza_pr = leer.nextInt();
-                                huff.add(new Hufflepuff(partidos_ganados, partidos_perdidos, agilidad_pr, velozidad_pr, fuerza_pr, " "));
+                                System.out.println("Ingrese una posicion para el capitan");
+                                int posCap = leer.nextInt();
+                                huff.add(new Hufflepuff(partidos_ganados, partidos_perdidos, agilidad_pr, velozidad_pr, fuerza_pr, Jugadores.get(posCap)));
                                 System.out.println("Desea modificar[s/n]: ");
                             }
                             break;
